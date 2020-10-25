@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+void fun(int a[], int x)
+{
+    int n=5;
+    for(int i=0;i<n-1;i++)
+    {
+       if(a[0] + a[i+1]== x)
+       {
+       cout <<"yes maja aa gaya"<<endl;
+            break;   
+       }
+    
+    }
+    //std::cout <<"not find the code"<<endl;
+}
+int main()
+{
+    int a[]={1,2,3,4,5};
+    int x=98;
+    fun(a,x);
+    std::cout <<"could not find the code"<<endl;
+}
