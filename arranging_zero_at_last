@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+void fun(std::vector<int>v,int a)
+{
+    for(int i=0;i<a;i++)
+    {
+    if(v[i]!=0)
+    std::cout <<v[i]<<endl;
+    }
+        for(int k=0;k<a;k++)
+        {
+            if(v[k]==0)
+            std::cout  <<char('a')<<endl;
+        }
+
+
+}
+int main()
+{
+    std::vector<int>v={1,2,3,4,0,7};
+    fun(v,v.size());
+
+}
