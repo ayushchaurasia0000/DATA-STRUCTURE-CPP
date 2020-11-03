@@ -1,0 +1,12 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+int main()
+{
+int a;
+int x=10;
+a=++x;
+std::cout <<a; // output 11
+std::cout <<x; //output 11
+return 0;
+}
