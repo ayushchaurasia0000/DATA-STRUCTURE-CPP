@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+int main() {
+    int n ; std::cin>>n;
+    char str[n] ;
+    std::cin>>str;
+
+    int count ;
+    int fr[n] ;
+    int visited = -1;
+  for(int i = 0 ; i < n ; i++) {
+      count = 1; 
+      for(int j = i+1 ; j < n ; j++ ) {
+          if(str[i] == str[j] ) {
+              count++;
+              fr[j] = visited;
+          }
+      }
+      if(fr[i] != visited) 
+      fr[i] =count ;
+  }   
+    int final = 0;
+    int l = 0 ;
+    char yes[n];
+  for(int i = 0 ; i < n ; i++) {
+      if(  (fr[i] != visited)  && fr[i] %2 == 1) {
+      yes[l] = str[i];
+      l++;
+      }
+  }
+     std::cout <<l<<endl;
+   for(int i = 0 ; i < l ; i++)
+   std::cout <<yes[i] ;
+   
+   
+   return 0;
+     
+}
