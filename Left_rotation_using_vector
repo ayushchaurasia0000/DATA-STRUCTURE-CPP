@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+void fun(std::vector<int>&v  ,int n , int rotate) {
+    
+    for(int i = 0 ; i < rotate ; i++) {
+        v.push_back( v[0] ) ;
+        v.erase( v.begin() ) ;
+    }
+    for(int i = 0 ; i < n ; i++)
+    std::cout << v[i] <<" " ;
+}
+int main() {
+    std::vector<int>v ; 
+    int n ; std::cin>>n;
+    int rotate  ; std::cin>>rotate ; 
+    
+    for(int i = 0 ; i < n ; i++ ) {
+        int answer ; std::cin>>answer ;
+        v.push_back(answer) ;
+    }
+    fun( v, n ,rotate % n );
+}
