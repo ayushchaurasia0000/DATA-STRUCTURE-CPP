@@ -1,0 +1,13 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+int main() {
+    int arr[] = { 2,4,5,6,7} ;
+    //int n = sizeof(arr) / sizeof(arr[0]) ;
+    for (int n : arr) 
+    std::cout <<n <<" " ;
+        std::cout <<endl ; 
+    std::vector<int>v = { 12,45,7,8,3} ;
+    for(int n : v) 
+    std::cout <<n <<" " ;
+}
