@@ -1,0 +1,16 @@
+#include<bits/stdc+++.h>
+
+using namespace std;
+int main() {
+auto = 'a' // a ;
+auto = 1000000000000 ; // 100000000000
+auto c = "ayush " ; // ayush  ;
+
+}
+
+
+	std::vector<int> v = {0, 1, 2, 3, 4, 5}; 
+	for (auto i : v) // it automactic increment the i to i++ till v.size() 
+		std::cout << i << ' '; // 0 1 2 3 4 5 
+	
+	
