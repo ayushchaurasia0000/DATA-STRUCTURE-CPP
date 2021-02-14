@@ -1,0 +1,13 @@
+int main() {
+  int arr[10] = { 1,4,2,5,7,8,1,2,1} ;
+  std::set<int>s ;
+  for(auto i = 0 ; i < 10 ;i++) 
+    s.insert(arr[i]) ;
+  s.erase(1) ; // this will remove the element 1 from the whole array :)   .... .    . .
+  auto it = s.find(4) ;
+  s.erase(it) // this will also remove the element 
+  for(auto it= s.begin() ; it != s.end() ; it++) 
+    std::cout <<*(it) << " " ;
+  
+  return  0 ;
+}
