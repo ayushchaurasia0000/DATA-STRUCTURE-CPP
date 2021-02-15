@@ -1,0 +1,6 @@
+int main() {
+  std::map<string, int >s ; 
+  s.insert(make_pair("ayush" , 10) );
+  for(auto it = s.begin() ; it != s.end() ; it++)
+    std::cout <<"t of the map " <<it -> first <<" this is secodn papa " <<it ->second ; 
+}
