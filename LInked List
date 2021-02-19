@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+class node {
+    public:
+    int data ;
+    node*next ;
+    node(int d) {
+        data = d ;
+        next = NULL;
+    }
+};
+
+void given(node*&head , int data) {
+    node*n = new node(data) ;
+    n->next = head ; 
+    head = n ;
+}
+
+void print(node*data) {
+    node*temp = data ;
+    while(temp != NULL) {
+        std::cout <<temp ->data <<" " ;
+        temp = temp -> next ;
+    }
+}
+int main() {
+    node*head = NULL ;
+    
+    given(head , 65) ;
+    given(head , 6) ;
+    given(head , 5) ;
+    print(head) ; 
+}
