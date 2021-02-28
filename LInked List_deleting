@@ -1,0 +1,54 @@
+class node {
+  public:
+  int data ; 
+  node*next ;
+  node(int d) {
+  data = d ; 
+    next = NULL ;
+  }
+};
+
+void adding_in_front(node*&head , int data) {
+  node*n = new node(data) ;
+  n->next = head ; 
+  head = n ;
+}
+
+void print(node*&head) {
+  while(head != NULL) {
+    std::cout <<head->data<<" " ;
+    head = head->next ;
+  }
+}
+
+void deleting_at_starting(node*&head ) {
+  if(head == NULL)
+    return ;
+  node*temp = head;
+  head =  head->next ;
+  delete temp ;
+  return ;
+}
+
+void deleting_at_tail(node*&head ) {
+  node*previous = NULL ;
+  node*temp = head;
+  while(temp -> next != NULL) {
+    previous = temp ; 
+    temp = temp->next ;
+  }
+  delete temp ;
+  previous->next  = NULL ;
+  return ;
+}
+int main() {
+  node*head = NULL ;
+  adding_in_front(head , 45 ) ;
+  adding_in_front(head , 46 ) ;
+  adding_in_front(head , 47 ) ;
+  deleting_at_starting(head) ;
+  deleting_at_tail(head) ;
+  print(head) ;
+  
+  return 0 ;
+}
