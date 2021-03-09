@@ -1,0 +1,55 @@
+class node {
+  public:
+  int data ; 
+  node*next ;
+  node(int d) {
+    data = d ;
+    next = NULL ;
+  }
+};
+void insertion(node*&head , int data ) {
+ /* while(head == NULL) 
+    return  ; 
+  */
+  node*n = new node(data) ;
+  n->next = head  ;
+  head = n ; 
+}
+
+void print(node*head) {
+  node*temp = head ;
+  while(temp != NULL) {
+    std::cout <<temp->data <<" " ;
+    temp = temp->next ; 
+  }
+}
+bool finding(node*&head, int key ) {
+  if(head == NULL)
+    return false ; 
+  
+   if(head -> data == key )  // iska mtlb hai head ka data 
+    return true ; 
+ 
+  else 
+    return (finding(head->next , key  ) );
+  
+}
+
+int main() {
+  node*head = NULL ; 
+  insertion(head, 4) ;
+  insertion( head , 10) ;
+  insertion(head, 40) ;
+  print(head) ;
+  
+  if(finding(head , 4)) 
+    std::cout <<"element is present "<<endl ;
+  else 
+    std::cout <<"element is not present "<<endl ;
+  
+  if(finding(head , 47))
+    std::cout <<"yes present " <<endl;
+  else 
+    std::cout <<"not present :) " <<endl ; 
+  
+}
