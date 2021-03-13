@@ -1,0 +1,45 @@
+class node {
+  public:
+  int data ; 
+  node*next ; 
+  node(int d) {
+    data = d ;
+    next = NULL ;
+  }
+};
+
+void tail(node*&head , int data ) {
+  if(head == NULL) {
+    head = new node(data) ;
+  return ; 
+  }
+  node*temp = head ;
+  while(temp -> next != NULL) {
+    temp = temp-> next ;
+   }
+  
+  temp->next = new node(data) ;
+  return ;
+}
+
+void taking_input(node*&head) {
+  int data ; std::cin>>data  ;
+  
+  while(data != -1 ) {
+    tail(head , data ) ;
+    std::cin>>data ;
+  }
+}
+
+void print(node*&head) {
+  while(head != NULL) {
+    std::cout <<head->data<<" " ;
+    head = head -> next ;
+  }
+}
+int main() {
+  node*head = NULL ;
+  taking_input(head) ;
+  print(head) ;
+  return 0 ;
+}
