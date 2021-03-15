@@ -18,7 +18,7 @@ void insertion(node*&head , int data ) {
 
 void end(node*&head, int data ) {
   while(head == NULL) 
-    head = new node(data) ;
+    head = new node(data) ; return ;
   
   node*temp = head ;
   while(temp->next != NULL)
