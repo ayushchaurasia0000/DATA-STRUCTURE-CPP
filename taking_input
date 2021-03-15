@@ -30,7 +30,7 @@ void end(node*&head, int data ) {
 
 void print(node*head) {
   node*temp = head ;
-  while(temp -> next != NULL) {
+  while(temp != NULL) {
     std::cout <<temp->data <<" " ;
     temp = temp->next ; 
   }
