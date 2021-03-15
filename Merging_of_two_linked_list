@@ -1,0 +1,99 @@
+class node {
+  public:
+  int data ; 
+  node*next ;
+  node(int d) {
+    data = d ;
+    next = NULL ;
+  }
+};
+void insertion(node*&head , int data ) {
+ /* while(head == NULL) 
+    return  ; 
+  */
+  node*n = new node(data) ;
+  n->next = head  ;
+  head = n ; 
+}
+
+void end(node*&head, int data ) {
+  while(head == NULL) {
+    head = new node(data) ;
+    return ; 
+  }
+  
+  node*temp = head ;
+  while(temp->next != NULL){
+    temp = temp ->next ;
+    
+  }
+    
+    node*n = new node(data ) ;
+    temp->next = n ; 
+}
+
+void print(node*head) {
+  node*temp = head ;
+  while(temp  != NULL) {
+    std::cout <<temp->data <<" " ;
+    temp = temp->next ; 
+  }
+}
+bool finding(node*&head, int key ) {
+  if(head == NULL)
+    return false ; 
+  
+   if(head -> data == key )  // iska mtlb hai head ka data 
+    return true ; 
+ 
+  else 
+    return (finding(head->next , key  ) );
+  
+}
+
+void taking_input(node*&head) {
+  int data ; std::cin>>data ; 
+  
+  while(data != 0) {
+    end(head, data) ;
+    std::cin>>data ;
+  }
+}
+
+node* merge(node*a , node*b) {
+  if(a== NULL)
+    return b ; 
+  else if(b==NULL)
+    return a ;
+  
+  
+  node*c ;
+  if(a->data <= b->data) {
+  c = a  ;
+  c->next = merge(a->next , b) ;
+  }
+  else if(a->data > b-> data) {
+    c= b  ; 
+    c-> next = merge( a , b-> next) ;
+  } 
+return c ;
+}
+
+istream& operator>>( istream &is ,node*& head) {
+  taking_input(head) ;
+  return is ;
+}
+
+ostream& operator<<(ostream&os, node*& head) {
+  print(head ) ;
+  return os ;
+}
+
+int main() {
+  node*head = NULL ; 
+  node*head2 = NULL ;
+  std::cin>>head>>head2 ;
+  //std::cout <<head << endl <<head2 <<endl ;
+  head = merge(head, head2 ) ;
+  std::cout <<head<<endl ;
+}
