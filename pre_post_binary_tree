@@ -1,0 +1,66 @@
+class node {
+  public:
+  int data ;
+  node*left ;
+  node*right ;
+  node(int d) {
+    data = d ;
+    left = NULL ;
+    right = NULL ;
+    }
+};
+
+  node* build_tree() {
+    int d ; std::cin>>d ;
+    if(d== 0)
+    return NULL;
+    
+    node*root = new node(d) ;
+    root -> left = build_tree() ;
+    root -> right = build_tree();
+    
+    return root ;
+    
+  }
+
+void print(node*root) {
+  
+  if(root == NULL)
+    return ;
+  
+  std::cout <<root -> data<<" " ;
+  print(root -> left) ;
+  print(root -> right) ;
+  
+}
+
+void in(node*root) {
+  if(root == NULL)
+    return ;
+  
+  in(root -> left) ;
+  std::cout<<root -> data<<" " ;
+  in(root -> right) ;
+}
+
+void post(node*root) {
+  
+  if(root == NULL) 
+    return ; 
+  
+  post(root -> left) ;
+  post(root -> right) ;
+  std::cout <<root -> data<<" " ;
+}
+
+int main() {
+  node * root = build_tree() ;
+  print(root) ;
+  std::cout <<endl ;
+  in(root) ;
+  std::cout <<endl ;
+  post(root) ;
+  
+  return 0 ;
+  
+}
